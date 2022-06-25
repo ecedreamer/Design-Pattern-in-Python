@@ -1,9 +1,10 @@
 from adapter import WebClientAdapter
-
+from LegacyWebClient import WebClient
 
 
 def get_website_status(url, params):
-    adapter = WebClientAdapter()
+    old_web_client = WebClient()
+    adapter = WebClientAdapter(old_web_client)
     status = adapter.send_get_request(url, params)
     print(status)
 

@@ -1,9 +1,8 @@
 from NewWebClientInterface import WebClientInterface
-from LegacyWebClient import WebClient
 
 class WebClientAdapter(WebClientInterface):
-    def __init__(self) -> None:
-        self.web_client = WebClient()
+    def __init__(self, web_client) -> None:
+        self.web_client = web_client
 
     def send_get_request(self, url: str, params: dict):
         return self.web_client.get(url, params)
